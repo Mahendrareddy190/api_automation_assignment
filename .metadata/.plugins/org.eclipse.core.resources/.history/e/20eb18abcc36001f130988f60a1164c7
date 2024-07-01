@@ -1,0 +1,33 @@
+package ApiAutomation;
+
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+
+import java.util.HashMap;
+
+import org.testng.annotations.Test;
+
+import io.restassured.module.jsv.JsonSchemaValidator.*;
+import io.restassured.response.Response;
+
+
+public class automation {
+	Response id;
+	
+	@Test
+	void Create_POST() {
+		HashMap<String, String> data = new HashMap<String, String>();
+		data.put("user", "hero");
+		data.put("password", "13.5");
+		id = given().contentType("application/json").body(data)
+		.when().post("https://restful-booker.herokuapp.com/auth");
+	}
+	
+	@Test
+	void Create_GET() {
+		given()
+		.when().get("https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02")
+		.then().statusCode(200).body("base",equalTo("stations")).body("name",equalTo("London")).log().all();		
+	}
+}

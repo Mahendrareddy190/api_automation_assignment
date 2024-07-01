@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "error": {
+      "type": "boolean"
+    },
+    "msg": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "populationCounts": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "year": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "sex": {
+                  "type": "string"
+                },
+                "reliabilty": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "year",
+                "value",
+                "sex",
+                "reliabilty"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "city",
+        "country",
+        "populationCounts"
+      ]
+    }
+  },
+  "required": [
+    "error",
+    "msg",
+    "data"
+  ]
+}
