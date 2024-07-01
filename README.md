@@ -2,5 +2,6 @@ paths:
 
 testng.xml : ApiAutomation/target/testng.xml
 
-resources:
-   path : ApiAutomation/src/test/resources
+resources : ApiAutomation/src/test/resources
+   
+testclasses: ApiAutomation/src/test/java/ApiAutomation
