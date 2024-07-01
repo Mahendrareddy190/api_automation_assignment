@@ -5,7 +5,7 @@
     <classes>
       <class name="ApiAutomation.automation">
         <methods>
-          <include name="Create_POST"/>
+          <include name="Create_GET"/>
         </methods>
       </class> <!-- ApiAutomation.automation -->
     </classes>
